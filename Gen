@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocean Fact</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0f7fa;
+            color: #006064;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            border: 2px solid #006064;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #006064;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #004d40;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ocean Fact</h1>
+        <p id="fact"></p>
+        <button id="nextFact">Next Fact</button>
+    </div>
+    <script>
+        const facts = [
+            "The ocean covers more than 70% of the Earth's surface.",
+            "The Pacific Ocean is the largest ocean, covering more than 63 million square miles.",
+            "The ocean is home to an estimated 230,000 known species, with many more yet to be discovered.",
+            "The Mariana Trench is the deepest part of the ocean, reaching depths of about 36,000 feet.",
+            "The ocean plays a crucial role in regulating the Earth's climate by absorbing carbon dioxide and heat.",
+            "More than 80% of the ocean is unexplored and unmapped.",
+            "The Great Barrier Reef in Australia is the largest coral reef system in the world.",
+            "Ocean currents, such as the Gulf Stream, can influence weather patterns and climate.",
+            "The ocean is a major source of food, providing over 3 billion people with their primary source of protein.",
+            "Marine life includes a diverse range of organisms, from microscopic plankton to the largest animal on Earth, the blue whale."
+        ];
+
+        let currentFactIndex = 0;
+
+        function displayFact() {
+            document.getElementById('fact').innerText = facts[currentFactIndex];
+        }
+
+        document.getElementById('nextFact').addEventListener('click', () => {
+            currentFactIndex = (currentFactIndex + 1) % facts.length;
+            displayFact();
+        });
+
+        // Display the first fact on page load
+        displayFact();
+    </script>
+</body>
+</html>
